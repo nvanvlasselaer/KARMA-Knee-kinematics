@@ -24,9 +24,8 @@ def load_origin_values(folder_path):
     return origins
 
 
-
 # Define paths to each body part
-path = "DATA/HS_025/Left/Output/"
+path = "Sample_DATA/HS_025/Left/Output/"
 
 tibia_path = os.path.join(path, "Tibia_final_r3/")
 femur_path = os.path.join(path, "Femur_final_r3/")
@@ -37,7 +36,6 @@ Tibia_origins = load_origin_values(tibia_path)
 Femur_origins = load_origin_values(femur_path)
 Patella_origins = load_origin_values(patella_path)
 
-# Display the results
 print("Tibia Origins:")
 for i, origin in enumerate(Tibia_origins):
     print(f"Origin {i}: {origin}")
@@ -49,7 +47,6 @@ for i, origin in enumerate(Femur_origins):
 print("\nPatella Origins:")
 for i, origin in enumerate(Patella_origins):
     print(f"Origin {i}: {origin}")
-
 
 #  plot the origins as scatter points in 3D space
 import matplotlib.pyplot as plt
@@ -64,14 +61,11 @@ patella_x, patella_y, patella_z = zip(*Patella_origins)
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
 
-# Scatter plot for Tibia
+
 ax.scatter(tibia_x, tibia_y, tibia_z, color='r', label='Tibia')
-# Scatter plot for Femur
 ax.scatter(femur_x, femur_y, femur_z, color='g', label='Femur')
-# Scatter plot for Patella
 ax.scatter(patella_x, patella_y, patella_z, color='b', label='Patella')
 
-# Set labels and legend
 ax.set_xlabel('X')
 ax.set_ylabel('Y')
 ax.set_zlabel('Z')
