@@ -4,6 +4,13 @@ import csv
 
 from Choose_subject import *
 
+
+#### Select pose number ####
+
+pose = 0
+
+############################
+
 # Function to read landmarks from the text file
 def read_landmarks_from_txt(file_path):
     with open(file_path, 'r') as file:
@@ -25,7 +32,7 @@ def read_and_subdivide_femur_landmarks(file_path):
         rows = list(reader)
     
     # Convert the first row into a numpy array of x, y, z triplets
-    femur_landmarks = np.array([float(val) for val in rows[0]]).reshape(-1, 3)
+    femur_landmarks = np.array([float(val) for val in rows[pose]]).reshape(-1, 3)
 
     # Subdivide into specified categories
     subdivisions = {
