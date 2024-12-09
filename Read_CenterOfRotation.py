@@ -1,5 +1,6 @@
 import os
 import re
+from Choose_subject import *
 
 # Regex to match the Origin pattern
 origin_pattern = re.compile(r"\(CenterOfRotationPoint ([\d\.\-e]+) ([\d\.\-e]+) ([\d\.\-e]+)\)")
@@ -24,12 +25,9 @@ def load_origin_values(folder_path):
     return origins
 
 
-# Define paths to each body part
-path = "Sample_DATA/HS_025/Left/Output/"
-
-tibia_path = os.path.join(path, "Tibia_final_r3/")
-femur_path = os.path.join(path, "Femur_final_r3/")
-patella_path = os.path.join(path, "Patella_final_r3/")
+tibia_path = os.path.join(path, "Output/Tibia_final_r3/")
+femur_path = os.path.join(path, "Output/Femur_final_r3/")
+patella_path = os.path.join(path, "Output/Patella_final_r3/")
 
 # Load Origin values for each body part
 Tibia_origins = load_origin_values(tibia_path)

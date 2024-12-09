@@ -1,5 +1,6 @@
 import os
 import numpy as np
+from Choose_subject import *
 
 def load_transformation_matrices(folder_path):
     matrices = []
@@ -11,14 +12,10 @@ def load_transformation_matrices(folder_path):
                 matrices.append(matrix)
     return matrices
 
-# path = "Saple_DATA/HS_025/Left/Output/" # Has no folder Transform
-# path = "Sample_DATA/HS_027/Left/Output/" # Has no folder Transform
-path = "Sample_DATA/HS_028/Left/Output/"
-
 # HS_027
-tibia_path = path + "Tibia_final_r3/Transform/"
-femur_path = path + "Femur_final_r3/Transform/"
-patella_path = path + "Patella_final_r3/Transform/"
+tibia_path = path + "Output/Tibia_final_r3/Transform/"
+femur_path = path + "Output/Femur_final_r3/Transform/"
+patella_path = path + "Output/Patella_final_r3/Transform/"
 
 Tibia_transformation = load_transformation_matrices(tibia_path)
 Femur_transformation = load_transformation_matrices(femur_path)
